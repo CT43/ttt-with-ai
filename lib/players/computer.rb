@@ -19,7 +19,10 @@ module Players
          return @move = combo[1] unless board.taken?(combo[1]+1)
        end
      end
-     elsif board.cells[combo[0]] != " " || board.cells[combo[1]] != " "
+   end
+   if !board.taken?(@move)
+     Game::WIN_COMBINATIONS.each do |combo|
+     if board.cells[combo[0]] != " " || board.cells[combo[1]] != " "
        if board.cells[combo[0]] == board.cells[combo[1]]
           @move = combo[2] unless board.taken?(combo[2]+1)
        elsif board.cells[combo[1]] == board.cells[combo[2]]

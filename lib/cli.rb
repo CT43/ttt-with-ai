@@ -48,4 +48,14 @@ class Cli
     end
   end
 
+  def play_again?
+    input = gets.strip
+    if input == "y"
+      Cli.new.call
+    elsif input == "n"
+    else
+      "Invalid Input"
+    end
+  end
+
 end

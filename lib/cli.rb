@@ -17,6 +17,7 @@ class Cli
     when num_players == "2"
       Game.new.play
     end
+    play_again?
   end
 
   def first?

@@ -31,6 +31,7 @@ module Players
           @move = combo[1] unless board.taken?(combo[1]+1)
        end
      end
+     end
    end
    move_index = @move.to_i + 1
    move_index.to_s

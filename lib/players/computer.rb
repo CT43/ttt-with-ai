@@ -10,8 +10,8 @@ module Players
 
     def close(board)
    Game::WIN_COMBINATIONS.each do |combo|
-     binding.pry
-     if board.cells[combo[0]] != " " || board.cells[combo[1]] != " "
+     #binding.pry
+     if board.cells[combo[0]] == self.token || board.cells[combo[1]] == self.token
        if board.cells[combo[0]] == board.cells[combo[1]]
          @move = combo[2] unless board.taken?(combo[2]+1)
        elsif board.cells[combo[1]] == board.cells[combo[2]]
@@ -19,7 +19,7 @@ module Players
        elsif board.cells[combo[2]] == board.cells[combo[0]]
          @move = combo[1] unless board.taken?(combo[1]+1)
        end
-     elsif board.cells[combo[0]] == self.token || board.cells[combo[1]] == self.token
+     elsif board.cells[combo[0]] != " " || board.cells[combo[1]] != " "
        if board.cells[combo[0]] == board.cells[combo[1]]
          @move = combo[2] unless board.taken?(combo[2]+1)
        elsif board.cells[combo[1]] == board.cells[combo[2]]

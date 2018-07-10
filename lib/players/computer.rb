@@ -21,11 +21,11 @@ module Players
        end
      elsif board.cells[combo[0]] != " " || board.cells[combo[1]] != " "
        if board.cells[combo[0]] == board.cells[combo[1]]
-         @move = combo[2] unless board.taken?(combo[2]+1)
+         return @move = combo[2] unless board.taken?(combo[2]+1)
        elsif board.cells[combo[1]] == board.cells[combo[2]]
-         @move = combo[0] unless board.taken?(combo[0]+1)
+         return @move = combo[0] unless board.taken?(combo[0]+1)
        elsif board.cells[combo[2]] == board.cells[combo[0]]
-         @move = combo[1] unless board.taken?(combo[1]+1)
+         return @move = combo[1] unless board.taken?(combo[1]+1)
        end
      end
    end

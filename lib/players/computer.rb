@@ -45,11 +45,13 @@ module Players
         "1"
       elsif board.turn_count == 1 && !board.taken?(5)
         "5"
-      elsif board.turn_count == 3 && self.token == board.cells[4] && ((board.cells[0] != " " && board.cells[8] != " ") || (board.cells[2] != " " && board.cells[6] != " "))
-        if board.cells[1] == " "
-          "2"
-        else
-          "4"
+      elsif board.turn_count == 3 && self.token == board.cells[4]
+        if ((board.cells[0] != " " && board.cells[8] != " ") || (board.cells[2] != " " && board.cells[6] != " "))
+          if board.cells[1] == " "
+            "2"
+          else
+            "4"
+          end
         end
       elsif board.turn_count >= 1
        x = close(board)

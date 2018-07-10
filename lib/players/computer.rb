@@ -57,8 +57,6 @@ module Players
      moves.detect do |move|
      board.valid_move?(move) == true
     end
-   end
-
-    
+   end  
   end
 end

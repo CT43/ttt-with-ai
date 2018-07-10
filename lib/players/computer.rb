@@ -1,7 +1,7 @@
 module Players
   class Computer < Player
     attr_accessor :move
-    
+
     def move(board)
       if board.turn_count == 0
         "1"

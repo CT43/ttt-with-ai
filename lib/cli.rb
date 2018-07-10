@@ -58,5 +58,4 @@ class Cli
       "Invalid Input"
     end
   end
-
 end

@@ -40,8 +40,6 @@ class Game
     won? == false ? nil:board.cells[won?[0]]
   end
 
-
-
   def turn
     puts "Please enter a number 1-9"
       board.display
@@ -55,7 +53,6 @@ class Game
         turn
       end
   end
-
 
   def play
     until over? == true || end_game == true

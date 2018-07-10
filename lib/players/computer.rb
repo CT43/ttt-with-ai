@@ -17,8 +17,10 @@ module Players
           break if @move == combo[2] 
        elsif board.cells[combo[1]] == board.cells[combo[2]]
           @move = combo[0] unless board.taken?(combo[0]+1)
+          break if @move == combo[2] 
        elsif board.cells[combo[2]] == board.cells[combo[0]]
           @move = combo[1] unless board.taken?(combo[1]+1)
+          break if @move == combo[2] 
        end
      elsif board.cells[combo[0]] != " " || board.cells[combo[1]] != " "
        if board.cells[combo[0]] == board.cells[combo[1]]

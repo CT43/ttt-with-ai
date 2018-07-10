@@ -49,6 +49,7 @@ class Cli
   end
 
   def play_again?
+    puts "Would you like to play again? (y/n)"
     input = gets.strip
     if input == "y"
       Cli.new.call

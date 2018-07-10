@@ -13,7 +13,7 @@ module Players
      #binding.pry
      if board.cells[combo[0]] == self.token || board.cells[combo[1]] == self.token
        if board.cells[combo[0]] == board.cells[combo[1]]
-         return @move = combo[2] unless board.taken?(combo[2]+1)
+          @move = combo[2] unless board.taken?(combo[2]+1)
        elsif board.cells[combo[1]] == board.cells[combo[2]]
          return @move = combo[0] unless board.taken?(combo[0]+1)
        elsif board.cells[combo[2]] == board.cells[combo[0]]

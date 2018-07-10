@@ -41,7 +41,7 @@ module Players
  end
 
     def move(board)
-      binding.pry
+      #binding.pry
       if board.turn_count == 0
         "1"
       elsif board.turn_count == 1 && !board.taken?(5)

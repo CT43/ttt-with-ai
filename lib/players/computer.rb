@@ -46,7 +46,8 @@ module Players
       elsif board.turn_count == 1 && !board.taken?(5)
         if board.taken?(1) || board.taken?(3) || board.taken?(7) || board.taken?(9)
         "5"
-        end
+        else
+          valid(board)
       elsif board.turn_count == 3 && self.token == board.cells[4] && ((board.cells[0] != " " && board.cells[8] != " ") || (board.cells[2] != " " && board.cells[6] != " "))
         if board.cells[1] == " "
           "2"

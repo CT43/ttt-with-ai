@@ -20,7 +20,7 @@ module Players
        end
      end
    end
-   if !board.taken?(@move)
+   if !board.taken?(move_index)
      Game::WIN_COMBINATIONS.each do |combo|
      if board.cells[combo[0]] != " " || board.cells[combo[1]] != " "
        if board.cells[combo[0]] == board.cells[combo[1]]

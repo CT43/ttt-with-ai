@@ -34,7 +34,7 @@ module Players
  end
 
  def valid(board)
-   moves = ["1", "3", "7", "9", "5", "2", "4", "6", "8"]
+   moves = ["1", "9", "3", "7", "5", "6", "4", "2", "8"]
    moves.detect do |move|
    board.valid_move?(move) == true
  end

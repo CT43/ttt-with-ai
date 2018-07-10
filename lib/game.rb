@@ -76,7 +76,8 @@ class Game
     elsif input == "n"
       break
     else
-      "Invalid Input"
+      "Invalid Input
+    end"
   end
 
 end

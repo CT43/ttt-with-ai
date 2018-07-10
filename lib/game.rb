@@ -69,6 +69,14 @@ class Game
       puts "Cat's Game!"
       board.display
     end
+    puts "Would you like to play again? (y/n)"
+    input == gets.strip
+    if input == "y"
+      Cli.new.call
+    elsif input == "n"
+      break
+    else
+      "Invalid Input"
   end
 
 end

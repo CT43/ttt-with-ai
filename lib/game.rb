@@ -66,7 +66,6 @@ class Game
       puts "Cat's Game!"
       board.display
     end
-    Cli.new.play_again?
   end
 
 end

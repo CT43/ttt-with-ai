@@ -7,6 +7,27 @@ module Players
     #    board.valid_move?(move) == true
     #  end
     #end
+    def move(board)
+      if board.turn_count == 0
+        "1"
+      elsif board.turn_count == 1 && !board.taken?(5)
+        "5"
+      elsif (board.turn_count == 3 && self.token == board.cells[4]) && ((board.cells[0] != " " && board.cells[8] != " ") || (board.cells[2] != " " && board.cells[6] != " "))
+        if board.cells[1] == " "
+          "2"
+        else
+          "4"
+        end
+      elsif board.turn_count >= 1
+       x = close(board)
+       if board.valid_move?(x) == true
+         close(board)
+       else
+         valid(board)
+       end
+      end
+    end
+
 
     def close(board)
    Game::WIN_COMBINATIONS.each do |combo|
@@ -43,26 +64,7 @@ module Players
  end
  end
 
-    def move(board)
-      if board.turn_count == 0
-        "1"
-      elsif board.turn_count == 1 && !board.taken?(5)
-        "5"
-      elsif (board.turn_count == 3 && self.token == board.cells[4]) && ((board.cells[0] != " " && board.cells[8] != " ") || (board.cells[2] != " " && board.cells[6] != " "))
-        if board.cells[1] == " "
-          "2"
-        else
-          "4"
-        end
-      elsif board.turn_count >= 1
-       x = close(board)
-       if board.valid_move?(x) == true
-         close(board)
-       else
-         valid(board)
-       end
-      end
-    end
+  
 
   end
 end

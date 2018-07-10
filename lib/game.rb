@@ -74,10 +74,10 @@ class Game
     if input == "y"
       Cli.new.call
     elsif input == "n"
-      break
+    end_game = true
     else
-      "Invalid Input
-    end"
+      "Invalid Input"
+    end
   end
 
 end
